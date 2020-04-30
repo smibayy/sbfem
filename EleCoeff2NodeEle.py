@@ -40,12 +40,11 @@ def EleCoeff2NodeEle(node, E, v):
     return E0, E1, E2
 
 if __name__ == '__main__':
-    node = [[1,-1],[1,1]]
+    node = np.array([[1,-1],[1,1]])
     E = 10.
     v = 0.
     e0, e1, e2 = EleCoeff2NodeEle(node, E, v)
-    print (e0)
     print (e1)
-    print (e2)
+    # print (e2)
 
 
