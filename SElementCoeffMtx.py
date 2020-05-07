@@ -49,6 +49,7 @@ def SElementCoeffMtx(node, conn, E, V):
     return E0, E1, E2
 
 if __name__ == '__main__':
+    from debug import *
     node, ele = inputData("test.sbinp")
     E = 10.
     v = 0.
@@ -65,10 +66,9 @@ if __name__ == '__main__':
     Zp = np.bmat([[s1, s2],[s3, s4]])
     # print (Zp)
     eignvalue, featurevector = np.linalg.eig(Zp)
-    # print (eignvalue)
-    a = np.diag(eignvalue)
-    print(a)
-
+    d = np.diag(eignvalue)
+    idx = np.argsort(-np.real(d),axis=0)
+    print(idx)
 
 
 
